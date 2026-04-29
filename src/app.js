@@ -1,6 +1,17 @@
+/*
+* File: app.js
+* Author: Erős István
+* Copyright: 2026, Erős István
+* Group: Szoft IN
+* Date: 2026-04-29
+* Github: https://github.com/pista12345/
+* Licenc: MIT
+*/
+
 import * as bootstrap from 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
+import Swal from 'sweetalert2'
 
 const kemiaiElemek = [
   { nev: 'Hidrogén', vegyjel: 'H', rendszam: 1, atomtomeg: 1.008, allapot: 'Gáz' },
@@ -15,7 +26,19 @@ const kemiaiElemek = [
 
 const doc = {
     tbody: document.querySelector('#tbody'),
-    resultDiv: document.querySelector('#result')
+    resultDiv: document.querySelector('#result'),
+    aboutButton: document.querySelector('#aboutButton')
+}
+
+doc.aboutButton.addEventListener('click', () => {
+    startAbout()
+})
+
+function startAbout() {
+    Swal.fire({
+        title: 'Névjegy',
+        text: 'Erős István, NI, 2026-04-29'
+    })
 }
 
 function render(elemek) {
@@ -30,9 +53,7 @@ function render(elemek) {
             <tr>
                 <td>
                     ${elem.nev} 
-                    <span class="badge text-bg-success">
-                        ${text}
-                    </span>
+                    <span class="badge text-bg-success">${text}</span>
                 </td>
                 <td>${elem.vegyjel}</td>
                 <td>${elem.rendszam}</td>

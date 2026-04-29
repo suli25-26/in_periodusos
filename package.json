@@ -14,7 +14,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "sweetalert2": "^11.26.24"
   },
   "devDependencies": {
     "vite": "^7.3.1"
